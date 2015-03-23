@@ -31,7 +31,7 @@ public String getName() {
 public void setName(String name) {
 	this.name = name;
 }
-@OneToMany(mappedBy="users", fetch=FetchType.EAGER)
+@OneToMany(mappedBy="user", fetch=FetchType.EAGER)
 public Set<Stocktaking> getStocktakings(){
 	return stocktakings;
 }

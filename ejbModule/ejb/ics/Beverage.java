@@ -57,7 +57,7 @@ public float getAmount() {
 public void setAmount(float amount) {
 	this.amount = amount;
 }
-@OneToMany(mappedBy="name", fetch=FetchType.EAGER)
+@OneToMany(mappedBy="beverage", fetch=FetchType.EAGER)
 public Set<Stocktaking> getStocktakings(){
 	return stocktakings;
 }

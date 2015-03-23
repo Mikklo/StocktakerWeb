@@ -57,7 +57,7 @@ public void setAmount(float amount) {
 	this.amount = amount;
 }
 @ManyToOne
-@JoinColumn(name="userid", referencedColumnName="userid")
+@JoinColumn(name="userid")
 public User getUser(){
 	return user;
 }
@@ -65,7 +65,7 @@ public void setUser(User user){
 	this.user = user;
 }
 @ManyToOne
-@JoinColumn(name="name", referencedColumnName="name")
+@JoinColumn(name="name")
 public Beverage getBeverage(){
 	return beverage;
 }
