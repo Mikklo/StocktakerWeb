@@ -6,6 +6,8 @@ import java.time.ZonedDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,6 +18,8 @@ private int userId;
 private String name;
 private ZonedDateTime date;
 private float amount;
+private User user;
+private Beverage beverage;
 @Id
 @Column(name="stocktakingId")
 public int getStocktakingId() {
@@ -51,5 +55,21 @@ public float getAmount() {
 }
 public void setAmount(float amount) {
 	this.amount = amount;
+}
+@ManyToOne
+@JoinColumn(name="userid", referencedColumnName="userid")
+public User getUser(){
+	return user;
+}
+public void setUser(User user){
+	this.user = user;
+}
+@ManyToOne
+@JoinColumn(name="name", referencedColumnName="name")
+public Beverage getBeverage(){
+	return beverage;
+}
+public void setBeverage(Beverage beverage) {
+	this.beverage = beverage;
 }
 }

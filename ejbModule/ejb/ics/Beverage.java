@@ -1,10 +1,13 @@
 package ejb.ics;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,6 +19,7 @@ private String type;
 private float exclVAT;
 private float inclVAT;
 private float amount;
+private Set<Stocktaking> stocktakings;
 
 @Id
 @Column(name="name")
@@ -52,5 +56,12 @@ public float getAmount() {
 }
 public void setAmount(float amount) {
 	this.amount = amount;
+}
+@OneToMany(mappedBy="name", fetch=FetchType.EAGER)
+public Set<Stocktaking> getStocktakings(){
+	return stocktakings;
+}
+public void setStocktakings(Set<Stocktaking> stocktakings){
+	this.stocktakings = stocktakings;
 }
 }
