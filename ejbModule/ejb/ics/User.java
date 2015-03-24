@@ -16,6 +16,7 @@ public class User implements Serializable{
 private int userId;
 private String name;
 private Set<Stocktaking> stocktakings;
+
 @Id
 @Column(name="userid")
 public int getUserId() {
