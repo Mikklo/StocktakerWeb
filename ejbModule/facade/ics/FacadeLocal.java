@@ -12,4 +12,5 @@ public interface FacadeLocal {
 	public Beverage updateBeverage(Beverage beverage);
 	public Stocktaking createStocktaking(Stocktaking stocktaking);
 	public User findByUserId(int userid);
+	public Stocktaking findStocktaking(int stockId);
 }

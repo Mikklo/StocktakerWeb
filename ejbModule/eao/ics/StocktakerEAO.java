@@ -27,6 +27,9 @@ public class StocktakerEAO implements StocktakerEAOLocal {
 		em.persist(stocktaking);
 		return stocktaking;
 	}
+	public Stocktaking findStocktaking(int stockId) {
+		return em.find(Stocktaking.class,  stockId);
+	}
 	public User findByUserId(int userid) {
 		return em.find(User.class, userid);
 	}

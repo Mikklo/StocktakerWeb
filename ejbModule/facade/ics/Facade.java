@@ -30,6 +30,9 @@ public class Facade implements FacadeLocal {
     public Stocktaking createStocktaking(Stocktaking stocktaking) {
     	 return StocktakerEAO.createStocktaking(stocktaking);
     }
+    public Stocktaking findStocktaking(int stockId) {
+    	return StocktakerEAO.findStocktaking(stockId);
+    }
     public User findByUserId(int userid) {
     	 return StocktakerEAO.findByUserId(userid);
     }
